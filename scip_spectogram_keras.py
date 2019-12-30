@@ -50,7 +50,7 @@ if __name__ == '__main__':
     frame_len=400
     sample_rate=8000
     frame_hop=240
-    my_path ="C:\\Users\\natank\\Desktop\\codesynth\\myfile12000.npy"
+    my_path ="C:\\Users\\myfile12000.npy"
     z0 = np.load(my_path)
     weight_derive_mat = create_derivative_layer(signal_len)
     hamming_scale, hamming_math=  hamming_window(frame_len, sample_rate)
