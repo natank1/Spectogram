@@ -9,11 +9,7 @@ def hamming_window (frame_len,sample_rate):
     denom=frame_len-1
     hamming = np.asarray([0.54 - 0.46 * np.cos(2*np.pi * jj / denom) for jj in range(frame_len)])
     ll = sum([i * i for i in hamming])
-    print(1 / math.sqrt(ll * sample_rate))
-    frame_length = 400
     scal = 1 / math.sqrt(sum([i * i for i in hamming]) * 8000)
-    print(scal)
-    print(hamming.shape, hamming)
     ham_diag = np.diag(hamming)
     return scal, ham_diag
 
@@ -54,7 +50,7 @@ if __name__ == '__main__':
     frame_len=400
     sample_rate=8000
     frame_hop=240
-    my_path ="my_path.npy"
+    my_path ="C:\\Users\\natank\\Desktop\\codesynth\\myfile12000.npy"
     z0 = np.load(my_path)
     weight_derive_mat = create_derivative_layer(signal_len)
     hamming_scale, hamming_math=  hamming_window(frame_len, sample_rate)
