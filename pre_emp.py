@@ -38,14 +38,14 @@ def create_pre_emp(signal_len, pre_emp_c=0.97):
     return model
 
 if __name__=="__main__":
-    xx = np.random.rand(1000)
+    xx = np.random.rand(2000)
     print ("linear process no keras")
     zz1=xx[1:]-0.97*xx[:-1]
 
     "keras with  dense layer"
-    model =create_pre_emp(1000)
+    model =create_pre_emp(2000)
     zz= model.predict(np.expand_dims(xx,axis=0))
 
     "keras_no dense layer"
-    model =keras_pre_emp(1000)
+    model =keras_pre_emp(2000)
     zz2 = model.predict(np.expand_dims(xx, axis=0))
